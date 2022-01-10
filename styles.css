@@ -41,6 +41,7 @@ body {
     font-family: 'Inter', sans-serif;
     color: var(--text-primary);
     background-color: var(--theme-bg);
+    padding-bottom: 4rem;
     transition: color 0.15s, background-color 0.15s;
 }
 
