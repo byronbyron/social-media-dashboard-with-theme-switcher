@@ -21,9 +21,11 @@
       </div>
 
       <div>
-        <label for="theme">Dark Mode</label>
-        <input type="checkbox" name="theme" id="theme" onchange="toggleTheme()">
-        <span class="theme-slider"></span>
+        <label class="theme-label" for="theme-toggle">Dark Mode</label>
+        <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">
+          <span class="sr-only">Toggle</span>
+          <span class="theme-slider"></span>
+        </button>
       </div>
     </div>
   </header>
