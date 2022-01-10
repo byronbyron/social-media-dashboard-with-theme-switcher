@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('normalize.css');
+
+:root {
+    --lime-green: hsl(163, 72%, 41%);
+    --bright-red: hsl(356, 69%, 56%);
+
+    --facebook: hsl(208, 92%, 53%);
+    --twitter: hsl(203, 89%, 53%);
+    --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    --youtube: hsl(348, 97%, 39%);
+}
+
+.theme-dark {
+    --theme-bg: hsl(230, 17%, 14%);
+    --theme-bg-top: hsl(232, 19%, 15%);
+    --theme-card-bg: hsl(228, 28%, 20%);
+    --theme-card-bg-hover: hsl(228, 26%, 27%);
+    --text-primary: hsl(0, 0%, 100%);
+    --text-secondary: hsl(228, 34%, 66%);
+    
+    --toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+.theme-light {
+    --theme-bg: hsl(0, 0%, 100%);
+    --theme-bg-top: hsl(225, 100%, 98%);
+    --theme-card-bg: hsl(227, 47%, 96%);
+    --theme-card-bg-hover: hsl(232, 33%, 91%);
+    --text-primary: hsl(230, 17%, 14%);
+    --text-secondary: hsl(228, 12%, 44%);
+
+    --toggle: hsl(230, 22%, 74%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    background-color: var(--theme-bg);
+    transition: color 0.15s, background-color 0.15s;
+}
+
+h1 {
+    font-size: 1.75rem;
+    margin: 0 0 0.25rem -0.1875rem;
+}
+
+p {
+    margin-top: 0;
+}
+
+.header {
+    padding: 2.375rem 0 8rem 0;
+    background-color: var(--theme-bg-top);
+    transition: background-color 0.15s;
+}
+
+.container {
+    max-width: 1158px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.grid {
+    display: grid;
+}
+
+.gap-lg {
+    gap: 1.5rem;
+}
+
+.gap-sm {
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: var(--text-primary);
+    background-color: var(--theme-card-bg);
+    transition: color 0.15s, background-color 0.15s;
+    padding: 2rem 1rem 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.card-lg {
+    min-height: 216px;
+    position: relative;
+}
+
+.card-lg::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card-facebook::after { background-color: var(--facebook);  }
+.card-twitter::after { background-color: var(--twitter);  }
+.card-instagram::after { background: var(--instagram);  }
+.card-youtube::after { background-color: var(--youtube);  }
+
+.card:hover,
+.card:focus {
+    background-color: var(--theme-card-bg-hover);
+}
+
+.attribution {
+    display: none;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.block {
+    display: block;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-2xl {
+    font-size: 3.375rem;
+}
+
+.text-sm {
+    font-size: 0.75rem;
+}
+
+.text-md {
+    font-size: 0.875rem;
+}
+
+.text-primary {
+    color: var(--text-primary);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+.text-green {
+    color: var(--lime-green);
+}
+
+.text-red {
+    color: var(--bright-red);
+}
+
+.uppercase {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    color: var(--text-secondary);
+}
+
+.-mt-4 {
+    margin-top: -6rem;
+}
+
+.mr-auto {
+    margin-right: auto;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.icon-up::before,
+.icon-down::before {
+    content: '';
+    display: inline-block;
+    background: url('images/icon-up.svg') no-repeat center;
+    width: 10px;
+    height: 10px;
+    margin-right: 0.25rem;
+    vertical-align: middle;
+}
+
+.icon-down::before {
+    background-image: url('images/icon-down.svg');
+}
+
+@media (min-width: 567px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gap-lg {
+        gap: 1.875rem;
+    }
+
+    .gap-sm {
+        gap: 1.5rem 1.875rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
