@@ -4,19 +4,17 @@ function setTheme(themeName) {
 }
 
 function toggleTheme() {
-    if (localStorage.getItem('theme') === 'theme-dark') {
-        setTheme('theme-light');
-    } else {
+    if (localStorage.getItem('theme') === 'theme-light') {
         setTheme('theme-dark');
+    } else {
+        setTheme('theme-light');
     }
 }
 
 (function () {
-    if (localStorage.getItem('theme') === 'theme-dark') {
-        setTheme('theme-dark');
-        document.getElementById('theme').checked = false;
-    } else {
+    if (localStorage.getItem('theme') === 'theme-light') {
         setTheme('theme-light');
-        document.getElementById('theme').checked = true;
+    } else {
+        setTheme('theme-dark');
     }
 })();
