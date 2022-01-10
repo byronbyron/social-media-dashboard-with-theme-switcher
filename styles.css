@@ -83,12 +83,17 @@ p {
     font-weight: bold;
     display: inline-block;
     margin-right: auto;
-    color: hsl(0, 0%, 100%);
+    color: var(--text-secondary);
     transition: color 0.15s;
+    cursor: pointer;
 }
 
 .theme-light .theme-label {
     color: hsl(0, 0%, 60%);
+}
+
+.theme-dark .theme-label:hover {
+    color: hsl(0, 0%, 100%);
 }
 
 .theme-toggle-btn {
